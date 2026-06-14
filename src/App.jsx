@@ -57,7 +57,7 @@ function App() {
   return (
     <div className="App">
       <h1>Obscure Colors</h1>
-      <h2>Try memorizing these obscure color names!</h2>
+      <h2>Try memorizing these 20 obscure color names!</h2>
 
       <div className = "container">
         <div>
