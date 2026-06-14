@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import './App.css'
+import Card from './components/Card'
+
 
 function App() {
   const names = [
@@ -23,7 +25,7 @@ function App() {
     'Puce',
     'Keppel',
     'Byzantium',
-  ]
+  ];
   const colors = [
     '#6082B6',
     '#E48400',
@@ -45,19 +47,31 @@ function App() {
     '#C3E0C6',
     '#43B3A3',
     '#702963',
-  ]
+  ];
   
-  const start = Math.floor(Math.random()*20)
-  const [name, setName] = useState(names[start])
-  const [color, setColor] = useState(colors[start])
+  const [color, setColor] = useState(Math.floor(Math.random()*20));
 
+  const newColor = () =>{
+    setColor(Math.floor(Math.random()*20));
+  };
   return (
     <div className="App">
       <h1>Overly Specific Color Names</h1>
       <h2>Try memorizing these obscure colors!</h2>
+
+      <div className = "container">
+        <div>
+          <Card theName = {names[color]} theColor = {colors[color]}/>
+          <p>sup</p>
+          <div className = "buttons">
+            <button lable = "next" onClick={newColor}>{names[color]}</button>
+          </div>
+        </div>
+
+      </div>
       
     </div>
-  )
-}
+  );
+};
 
 export default App

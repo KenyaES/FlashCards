@@ -8,3 +8,26 @@ body {
   background-color: rgb(46, 46, 46);
 
 }
+
+.card{
+  background-color: aliceblue;
+  color:black;
+  border: 3px solid purple;
+
+  width: 250px;
+  height: 250px;
+}
+
+.border{
+  border: 5px solid red;
+  height: 300px;
+  width: 300px;
+}
+
+#false{
+  display: none;
+}
+
+#true{
+  display: block;
+}
