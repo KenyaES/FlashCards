@@ -13,7 +13,8 @@ const Card = (props) =>{
     return(
         <div className='border' onClick={display}>
             <div className="card" style = {{backgroundColor:props.theColor}} id ={String(front)}></div>
-            
+            <p id={String(!front)}>smth</p>
+
         </div>
     );
 };
