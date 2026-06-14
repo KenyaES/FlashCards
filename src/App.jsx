@@ -56,16 +56,15 @@ function App() {
   };
   return (
     <div className="App">
-      <h1>Overly Specific Color Names</h1>
-      <h2>Try memorizing these obscure colors!</h2>
+      <h1>Obscure Colors</h1>
+      <h2>Try memorizing these obscure color names!</h2>
 
       <div className = "container">
         <div>
           <Card theName = {names[color]} theColor = {colors[color]}/>
-          <p>sup</p>
-          <div className = "buttons">
-            <button lable = "next" onClick={newColor}>{names[color]}</button>
-          </div>
+
+          <button lable = "next" onClick={newColor}>next</button>
+
         </div>
 
       </div>

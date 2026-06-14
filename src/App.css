@@ -6,3 +6,9 @@
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   color: #e4e4e4;
 }
+
+.App{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
