@@ -44,26 +44,81 @@ function App() {
     '#E52B50',
     '#645452',
     '#C3E0C6',
-    '#C3E0C6',
+    '#53322E',
     '#43B3A3',
     '#702963',
   ];
   
-  const [color, setColor] = useState(Math.floor(Math.random()*20));
+  const [color, setColor] = useState(0);
 
-  const newColor = () =>{
-    setColor(Math.floor(Math.random()*20));
+  const[prev, checkPrev] = useState('more')
+  const[next, checkNext] = useState('more')
+  const[input, checkInput] = useState('more')
+  const[answer, setAnswer] = useState('')
+
+  const nextColor = () =>{
+    checkInput('')
+    checkNext('more')
+    checkPrev('more')
+    if (color < 19) {
+      setColor(color+1);
+    }
+    else{
+      checkNext('none')
+    }
   };
+
+  const prevColor = () =>{
+    checkInput('')
+    checkNext('more')
+    checkPrev('more')
+    if (color > 0) {
+      setColor(color-1);
+    }
+    else{
+      checkPrev('none')
+    }
+  };
+
+  const handleChange = (event) => {
+    setAnswer(event.target.value)
+  }
+
+  const verify = () =>{
+    
+    if (answer == names[color]){
+      checkInput('correct')
+    }
+    else{
+      checkInput('wrong')
+    }
+  }
+
   return (
     <div className="App">
       <h1>Obscure Colors</h1>
       <h2>Try memorizing these 20 obscure color names!</h2>
 
+      <p>{answer}</p>
+
+      <input
+        type="text"
+        name={input}
+        value ={answer}
+        placeholder='Guess the color!'
+        onChange={handleChange}
+        className={input}
+
+      />
+
       <div className = "container">
+        
         <div>
+          <button onClick={verify}>Check Answer</button>
           <Card theName = {names[color]} theColor = {colors[color]}/>
 
-          <button lable = "next" onClick={newColor}>next</button>
+          <button className={prev} lable = "prev" onClick={prevColor}>prev</button>
+          <button className={next} lable = "next" onClick={nextColor}>next</button>
 
         </div>
 

@@ -62,11 +62,36 @@ button{
   transform: skew(5deg, -5deg);
 }
 
+.none{
+  background-color: gray;
+}
+
+.none:active{
+  color: white
+}
+.more{
+  background-color: aquamarine;
+}
+
+.correct{
+  background-color: rgba(128, 255, 0, 0.441);
+}
+
+.wrong{
+  background-color: rgba(199, 13, 13, 0.556);
+}
+
 button:hover{
   transform: scale(1.05);
 }
 
-button:active{
+input{
+  display: flex;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.more:active{
   transform: scale(0.6);
 }
 
